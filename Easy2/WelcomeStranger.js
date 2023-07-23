@@ -1,6 +1,8 @@
-function greetings(arr, object) {
+function greetings (array, object) {
 
-  return `Hello, ${arr.join(' ')}! Nice to have a ${object.title} ${object.occupation} around.`;
+  let name = array.join(' ');
+
+  return `Hello ${name}. Nice to have a ${object.title} ${object.occupation} around.`;
 
 }
 

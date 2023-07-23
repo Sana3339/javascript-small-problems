@@ -1,10 +1,10 @@
 function oddities(nums) {
 
   let res = [];
-  for (let idx = 0; idx < nums.length; idx += 2) {
+
+  for (let idx = 1; idx < nums.length; idx += 2) {
     res.push(nums[idx]);
   }
-  return res;
 }
 
 console.log(oddities([2, 3, 4, 5, 6])); // logs [2, 4, 6]

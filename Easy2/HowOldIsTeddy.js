@@ -1,7 +1,8 @@
-function randomBetween(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+function computeAge() {
+
+  return (Math.floor(Math.random() * 120)) + 20;
 }
 
-let age = randomBetween(20,120);
+let age = computeAge();
 
 console.log(`Teddy is ${age} years old!`);

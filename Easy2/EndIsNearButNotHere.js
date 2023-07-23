@@ -1,8 +1,6 @@
 function penultimate(sentence) {
-  let wordList = sentence.split(" ");
-  if (wordList.length < 2) {
-    return "";
-  }
+
+  let wordList = sentence.split(' ');
   return wordList[wordList.length - 2];
 }
 

@@ -1,11 +1,11 @@
 function centerOf(sentence) {
 
-  let length = sentence.length;
-  let midIdx = Math.floor(length / 2);
-  if (length % 2 === 0) {
-    return sentence[midIdx - 1] + sentence[midIdx];
+  if (sentence.length % 2 === 1) {
+    let centerIndex = (sentence.length - 1) / 2;
+    return sentence[centerIndex];
   } else {
-    return sentence[midIdx];
+    let leftIndex = (sentence.length / 2) - 1;
+    return sentence.substring(leftIndex, leftIndex + 2);
   }
 }
 

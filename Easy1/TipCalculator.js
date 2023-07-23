@@ -1,15 +1,10 @@
-let readlineSync = require('readline-sync');
+let readline = require('readline-sync');
 
-console.log('What is the bill?');
-let billAmount = readlineSync.question();
-billAmount = parseInt(billAmount, 10);
+let billAmount = parseFloat(readline.question("What is the bill?\n"));
+let tipPercentage = parseFloat(readline.question("what is the tip percentage (e.g. 15)?\n"));
 
-console.log('What is the tip percentage (e.g. 20 for 20%)?');
-let tipPercentage = readlineSync.question();
-tipPercentage = parseInt(tipPercentage) / 100;
+let tipAmount = (tipPercentage / 100) * billAmount;
+let total = billAmount + tipAmount;
 
-let tipAmount = billAmount * tipPercentage;
-let totalBillWithTip = billAmount + tipAmount;
-
-console.log(`The tip is $${tipAmount.toFixed(2)}`);
-console.log(`The total is $${totalBillWithTip.toFixed(2)}`)
+console.log(`\nThe tip is $${(tipAmount).toFixed(2)}`);
+console.log(`The total is $${(total).toFixed(2)}\n`);

@@ -1,12 +1,14 @@
-function multisum(n) {
+function multisum(targetNum) {
 
-  let sum = 0;
-  for (let i = 1; i <= n; i++) {
-    if ((i % 3 == 0) || (i % 5 == 0)) {
-      sum += i;
+  let result = 0;
+
+  for (let idx = 0; idx <= targetNum; idx += 1) {
+    if (idx % 3 === 0 || idx % 5 === 0) {
+      result += idx;
     }
   }
-  return sum;
+
+  return result;
 }
 
 console.log(multisum(3));       // 3

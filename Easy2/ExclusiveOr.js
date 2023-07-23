@@ -1,10 +1,6 @@
 function xor(value1, value2) {
 
-  if ((value1 && !value2) || (!value1 && value2)) {
-    return true;
-  } else {
-    return false;
-  }
+  return ((value1 && !value2) || (!value1 && value2));
 }
 
 console.log(xor(5, 0) === true);          // true
