@@ -8,13 +8,12 @@ function twice(number) {
 }
 
 function isDoubleNumber(number) {
+  let stringNumber = String(number);
+  let center = Math.floor(stringNumber.length / 2);
+  let leftNumber = stringNumber.substring(0, center);
+  let rightNumber = stringNumber.substring(center);
 
-  let stringNum = String(number);
-  let middle = Math.floor(stringNum.length / 2);
-  let leftNumber = stringNum.substring(0, middle);
-  let rightNumber = stringNum.substring(middle);
-
-  return (leftNumber === rightNumber);
+  return leftNumber === rightNumber;
 }
 
 console.log(twice(37));          // 74

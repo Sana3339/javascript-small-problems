@@ -1,16 +1,13 @@
-function crunch(input) {
+function crunch(text) {
 
-  let result = '';
-  if (input.length > 0) {
-    result += input[0];
-  }
+  let crunchText = "";
 
-  for (let idx = 1; idx <= input.length; idx++) {
-    if (input[idx] !== input[idx - 1]) {
-      result += input[idx];
+  for (let idx = 0; idx <= text.length - 1; idx += 1) {
+    if (text[idx] !== text[idx + 1]) {
+      crunchText += text[idx];
     }
   }
-  return result;
+  return crunchText;
 }
 
 console.log(crunch('ddaaiillyy ddoouubbllee'));    // "daily double"

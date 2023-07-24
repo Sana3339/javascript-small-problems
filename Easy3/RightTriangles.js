@@ -4,13 +4,13 @@ function triangle(height) {
   let stars = 1;
 
   while (height > 0) {
-
     console.log(`${" ".repeat(spaces)}${"*".repeat(stars)}`);
+    height -= 1;
     spaces -= 1;
     stars += 1;
-    height -= 1;
-
   }
+
+
 }
 
 triangle(5);

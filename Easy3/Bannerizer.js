@@ -1,13 +1,17 @@
 function logInBox(message) {
 
-  let horizontalRule = `+${"-".repeat(message.length + 2)}+`;
-  let emptyLine = `|${" ".repeat(message.length + 2)}|`;
+  let lineLength = message.length + 2;
 
-  console.log(horizontalRule);
-  console.log(emptyLine);
-  console.log(`| ${message} |`);
-  console.log(emptyLine);
-  console.log(horizontalRule);
+  let topBottom = "+" + ("-").repeat(lineLength) + '+';
+  let midNonMessageLine = "|" + (" ").repeat(message.length + 2) + "|";
+  let messageLine = "|" + " " + message + " " + "|";
+
+  console.log(topBottom);
+  console.log(midNonMessageLine );
+  console.log(messageLine);
+  console.log(midNonMessageLine );
+  console.log(topBottom);
+
 }
 
 logInBox('');

@@ -1,8 +1,8 @@
-function stringy(input) {
+function stringy(number) {
 
   let result = "";
 
-  for (let idx = 0; idx < input; idx++) {
+  for (let idx = 0; idx < number; idx += 1) {
     if (idx % 2 === 0) {
       result += "1";
     } else {
@@ -11,6 +11,7 @@ function stringy(input) {
   }
   return result;
 }
+
 
 console.log(stringy(6));    // "101010"
 console.log(stringy(9));    // "101010101"

@@ -1,24 +1,26 @@
-function isLowerCaseLetter(letter) {
-  return letter >= 'a' && letter <= 'z';
+function isLowerCase(char) {
+  return (char >= 'a' && char <= 'z');
 }
 
-function isUpperCaseLetter(letter) {
-  return letter >= 'A' && letter <= 'Z';
+function isUpperCase(char) {
+  return (char >= 'Z' && char <= 'Z');
 }
 
 function cleanUp(sentence) {
 
-  let res = [];
+  let res = "";
 
   for (let idx = 0; idx < sentence.length; idx += 1) {
-    let letter = sentence[idx];
-    if (isLowerCaseLetter(letter) || isUpperCaseLetter(letter)) {
-      res.push(letter);
-    } else if (res.length > 0 && res[res.length - 1] !== " ") {
-      res.push(" ");
+    let char = sentence[idx];
+    if (!isUpperCase(char) && !isLowerCase(char)) {
+      if (res.length > 0 && res[res.length - 1] !== ' ') {
+        res += " ";
+      }
+    } else {
+      res += char;
     }
   }
-  return res.join('');
+  return res;
 }
 
 console.log(cleanUp("---what's my +*& line?"));
