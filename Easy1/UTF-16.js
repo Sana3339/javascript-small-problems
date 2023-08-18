@@ -1,13 +1,11 @@
 function utf16Value(string) {
 
-  let total = 0;
+  let result = 0;
 
-  for (let num = 0; num < string.length; num += 1) {
-    total += string.charCodeAt(num);
+  for (let idx = 0; idx < string.length; idx += 1) {
+    result += string.charCodeAt(idx);
   }
-
-  return total;
-
+  return result;
 }
 
 
