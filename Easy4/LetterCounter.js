@@ -1,20 +1,36 @@
-function wordSizes(string) {
+function wordSizes(words) {
 
-  let obj = {};
-  let wordArray = string.split(' ');
+  let wordsArray = words.split(' ');
+  let count = {};
 
-  for (let idx = 0; idx < wordArray.length; idx += 1) {
-    let length = wordArray[idx].length;
-    if (length === 0) {
+  for (let idx = 0; idx < wordsArray.length; idx += 1) {
+
+    let word = wordsArray[idx];
+    let wordLength = cleanWordLength(word);
+
+    if (wordLength === 0) {
       continue;
     }
-    if (!obj[length]) {
-      obj[length] = 0;
-    }
-    obj[length] += 1;
-  }
 
-  return obj;
+    if (!count[wordLength]) {
+      count[wordLength] = 0;
+    }
+    count[wordLength] += 1;
+  }
+  return count;
+}
+
+function cleanWordLength(word) {
+
+  let count = 0;
+
+  for (let idx = 0; idx < word.length; idx += 1) {
+    let char = word[idx];
+    if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')) {
+      count += 1;
+    }
+  }
+  return count;
 }
 
 console.log(wordSizes('Four score and seven.'));                       // { "3": 1, "4": 1, "5": 1, "6": 1 }
