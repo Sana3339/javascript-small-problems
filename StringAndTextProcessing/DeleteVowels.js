@@ -1,6 +1,14 @@
 function removeVowels(string) {
 
+  let res = '';
 
+  string.split('').forEach(char => {
+    if (!'aeiou'.includes(char.toLowerCase()) {
+      res += char;
+    }
+  });
+
+  console.log(res);
 
 }
 

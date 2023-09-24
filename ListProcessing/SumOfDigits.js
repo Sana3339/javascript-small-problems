@@ -1,14 +1,8 @@
-function sum(digits) {
+function sum(number) {
 
-  let sum = 0;
-
-  while (digits > 0) {
-    let lastDigit = digits % 10;
-    sum += lastDigit;
-    digits = Math.floor(digits / 10);
-  }
-
-  return sum;
+  return String(number)
+    .split('')
+    .reduce((accumulator, digit) => accumulator + Number(digit),0);
 }
 
 console.log(sum(23));           // 5
