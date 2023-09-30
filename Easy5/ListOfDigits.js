@@ -1,14 +1,6 @@
 function digitList(digits) {
 
-  let res = [];
-
-  while (digits > 0) {
-    let lastDigit = digits % 10;
-    res.push(lastDigit);
-    digits = Math.floor(digits / 10);
-  }
-
-  return res.reverse();
+  return String(digits).split('').map(ele => Number(ele));
 
 }
 

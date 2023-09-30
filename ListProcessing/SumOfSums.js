@@ -1,5 +1,7 @@
 function sumOfSums(array) {
 
+  sums = [];
+
   for (let idx = 0; idx < array.length; idx += 1) {
 
   }

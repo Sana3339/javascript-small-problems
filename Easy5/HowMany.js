@@ -2,20 +2,20 @@ function countOccurrences(array) {
 
   let count = {};
 
-  array.forEach(vehicle => {
-    count[vehicle] = count[vehicle] || 0;
-    count[vehicle] += 1;
+  array.forEach(ele => {
+    count[ele] = count[ele] || 0;
+    count[ele] += 1;
   });
 
-  for (let vehicle in count) {
-    console.log(`${vehicle} => ${count[vehicle]}`);
-  }
-
+  Object.entries(count).forEach(entry => {
+    let [car, count] = entry;
+    console.log(`${car} => ${count}`);
+  });
 }
 
 let vehicles = ['car', 'car', 'truck', 'car', 'SUV', 'truck', 'motorcycle', 'suv', 'motorcycle', 'car', 'truck'];
 
-countOccurrences(vehicles);
+console.log(countOccurrences(vehicles));
 
 // console output -- your output sequence may be different
 // car => 4

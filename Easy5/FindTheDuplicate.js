@@ -1,17 +1,13 @@
 function findDup(array) {
 
-  let seen = {};
+  array.sort();
 
-  for (let idx = 0; idx < array.length; idx += 1) {
-    if (seen[array[idx]]) {
+  for (let idx = 1; idx < array.length; idx += 1) {
+    if (array[idx - 1] === array[idx]) {
       return array[idx];
-    } else {
-      seen[array[idx]] = true;
     }
   }
-
-  return undefined;
-
+  return -1;
 }
 
 console.log(findDup([1, 5, 3, 1]));                                // 1

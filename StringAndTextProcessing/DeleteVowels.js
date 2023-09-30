@@ -1,15 +1,25 @@
-function removeVowels(string) {
+function removeVowels(arr) {
 
-  let res = '';
+  const VOWELS = 'aeiou';
 
-  string.split('').forEach(char => {
-    if (!'aeiou'.includes(char.toLowerCase()) {
-      res += char;
+  return arr.map(string => {
+    let chars = string.split("");
+    let removedVowels = deleteVowels(chars);
+    return removedVowels.join("");
+  });
+}
+
+function deleteVowels(array) {
+
+  const VOWELS = ['a','e','i','o','u', 'A','E','I','O','U'];
+
+  return array.map(char => {
+    if (VOWELS.indexOf(char) >= 0) {
+      return "";
+    } else {
+      return char;
     }
   });
-
-  console.log(res);
-
 }
 
 console.log(removeVowels(['abcdefghijklmnopqrstuvwxyz']));         // ["bcdfghjklmnpqrstvwxyz"]

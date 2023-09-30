@@ -3,10 +3,8 @@ function multiplyList(array1, array2) {
   let res = [];
 
   for (let idx = 0; idx < array1.length; idx += 1) {
-    let currNum = array1[idx] * array2[idx];
-    res.push(currNum);
+    res.push(array1[idx] * array2[idx]);
   }
-
   return res;
 }
 

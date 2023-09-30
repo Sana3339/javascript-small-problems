@@ -1,10 +1,12 @@
 function halvsies(arr) {
 
-  let half = Math.ceil(arr.length / 2);
-  let firstHalf = arr.slice(0, half);
-  let secondHalf = arr.slice(half);
+  let res = [];
 
-  return [firstHalf, secondHalf];
+  let mid = Math.ceil(arr.length / 2);
+  res.push(arr.slice(0, mid));
+  res.push(arr.slice(mid));
+
+  return res;
 }
 
 console.log(halvsies([1, 5, 2, 4, 3]));    // [[1, 5, 2], [4, 3]]

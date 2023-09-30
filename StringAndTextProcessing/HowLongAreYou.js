@@ -1,5 +1,14 @@
-function wordLengths() {
+function wordLengths(sentence) {
 
+  if (arguments.length === 0 || sentence.length === 0) {
+    return [];
+  }
+
+  return sentence
+    .split(' ')
+    .map(word => {
+      return (`${word} ${word.length}`);
+    });
 }
 
 console.log(wordLengths('cow sheep chicken'));

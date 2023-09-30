@@ -1,6 +1,6 @@
-function swapName(string) {
+function swapName(name) {
 
-  return string.split(' ').reverse().join(', ');
+  return name.split(' ').reverse().join(',');
 
 }
 

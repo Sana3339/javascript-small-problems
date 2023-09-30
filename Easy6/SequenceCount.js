@@ -3,11 +3,11 @@ function sequence(count, startNum) {
   let res = [];
   let currNum = startNum;
 
+
   for (let idx = 0; idx < count; idx += 1) {
     res.push(currNum);
     currNum += startNum;
   }
-
   return res;
 }
 

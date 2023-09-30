@@ -1,4 +1,5 @@
-function searchWord() {
+function searchWord(targetWord, text) {
+
 
 
 }

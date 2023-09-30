@@ -3,8 +3,8 @@ function reverse(array) {
   let left = 0;
   let right = array.length - 1;
 
-  while (left < right) {
-    [array[left], array[right]] = [array[right], array[left]];
+  while (left <= right) {
+    array[left], array[right] = array[right], array[left];
     left += 1;
     right -= 1;
   }
