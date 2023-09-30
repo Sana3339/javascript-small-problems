@@ -1,16 +1,11 @@
-let readline = require('readline-sync');
+let readline = require("readline-sync");
 
-function prompt(msg) {
-  console.log(`=> ${msg}`);
-}
+let currAge = parseInt(readline.question("What is your age? "), 10);
 
-prompt("What is your age?");
-let currAge = Number(readline.prompt());
+let retirementAge = parseInt(readline.question("At what age would you like to retire? "), 10);
 
-prompt("At what age would you like to retire?");
-let retirementAge = Number(readline.prompt());
+let today = new Date();
+let currYear = today.getFullYear();
 
-let date = new Date();
-
-console.log(`It's ${date.getFullYear()}. You will retire in ${date.getFullYear() + (retirementAge - currAge)}`);
-console.log(`You have only ${retirementAge - currAge} years of work to go!`);
+console.log(`It's ${currYear}.  You will retire in ${retirementAge - currAge + currYear}.` );
+console.log(`You only have ${retirementAge - currAge} years of work to go!`);

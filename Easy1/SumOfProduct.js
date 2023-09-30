@@ -1,34 +1,35 @@
-function calculateProduct(targetNum) {
+function calculateSum(num) {
+  let numSum = 0;
 
-  let result = 0;
-  for (let idx = 0; idx < targetNum; idx += 1) {
-    result *= idx;
+  for (let idx = 1; idx <= num; idx += 1) {
+    numSum += idx;
   }
-  return result;
+
+  return numSum;
 }
 
-function caclulateSum(targetNum) {
+function calculateProduct(num) {
 
-  let result = 0;
-  for (let idx = 0; idx < targetNum; idx += 1) {
-    result += idx;
+  let numProduct = 1;
+
+  for (let idx = 1; idx <= num; idx += 1) {
+    numProduct *= idx;
   }
-  return result;
+
+  return numProduct;
 }
 
 let readline = require('readline-sync');
 
-let targetNum = readline.question("Please enter an integer greater than 0: ");
-targetNum = parseInt(targetNum, 10);
+let userInputInteger = readline.question("Please enter an integer greater than 0: ");
+let num = parseInt(userInputInteger, 10);
 
-let userInput = readline.question("Enter 's' to compute the sum or 'p' to compute the product: ");
+let userInputOperator = readline.question("Enter 's' to compute the sum, or 'p' to compute the product: ");
 
-if (userInput === 's') {
-  let sum = caclulateSum(targetNum);
-  console.log(`The sum of the integers between 0 and ${targetNum} is ${sum}.`);
-} else if (userInput === 'p') {
-  let product = calculateProduct(targetNum);
-  console.log(`The product of the integers between 0 and ${targetNum} is ${product}`);
+if (userInputOperator === 's') {
+  console.log(`The sum of the integers between 1 and ${num} is ${calculateSum(num)}`);
+} else if (userInputOperator === 'p') {
+  console.log(`The product of the integers between 1 and ${num} is ${calculateProduct(num)}`);
 } else {
-  console.log("Invalid entry.");
+  console.log("That's not a valid response");
 }

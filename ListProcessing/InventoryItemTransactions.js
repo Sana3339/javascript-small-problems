@@ -1,4 +1,7 @@
-function transactionsFor() {
+function transactionsFor(inventoryId, transactions) {
+
+  return transactions
+    .filter(transaction => transaction.id === inventoryId);
 
 }
 

@@ -1,7 +1,8 @@
 function penultimate(sentence) {
 
-  let wordList = sentence.split(' ');
-  return wordList[wordList.length - 2];
+  let wordsArray = sentence.split(' ');
+  return wordsArray[wordsArray.length - 2];
+
 }
 
 console.log(penultimate("last word") === "last"); // logs true

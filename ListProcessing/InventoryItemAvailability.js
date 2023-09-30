@@ -1,5 +1,23 @@
-function isItemAvailable() {
+function transactionsFor(inventoryId, transactions) {
 
+  return transactions
+    .filter(transaction => transaction.id === inventoryId);
+
+}
+
+function isItemAvailable(inventoryId, transactions) {
+
+  let quantity = transactionsFor(inventoryId, transactions).reduce(
+    (sum, transaction) => {
+      if (transaction.movement === "in") {
+        return sum + transaction.quantity;
+      } else {
+        return sum - transaction.quantity;
+      }
+    },
+    0
+  );
+  return quantity > 0;
 }
 
 let transactions = [ { id: 101, movement: 'in',  quantity:  5 },

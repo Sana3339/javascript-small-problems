@@ -1,6 +1,6 @@
 function computeAge() {
 
-  return (Math.floor(Math.random() * 120)) + 20;
+  return Math.floor(Math.random() * 120) + 20;
 }
 
 let age = computeAge();
