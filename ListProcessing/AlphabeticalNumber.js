@@ -1,21 +1,19 @@
 function alphabeticNumberSort(array) {
 
-  const NUMBER_WORDS = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight',
-    'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen',
-    'seventeen', 'eighteen', 'nineteen'];
+  const NUMBER_WORDS = ['zero', 'one', 'two', 'three', 'four', 'five',
+  'six', 'seven', 'eight', 'nine', 'ten', 'eleven',
+  'twelve', 'thirteen', 'fourteen', 'fifteen',
+  'sixteen', 'seventeen', 'eighteen', 'nineteen'];
 
-  function wordSort(num1, num2) {
-
-    if (NUMBER_WORDS[num1] > NUMBER_WORDS[num2]) {
+  return array.slice().sort((a,b) => {
+    if (NUMBER_WORDS[a] > NUMBER_WORDS[b]) {
       return 1;
-    } else if (NUMBER_WORDS[num1] < NUMBER_WORDS[num2]) {
+    } else if (NUMBER_WORDS[b] > NUMBER_WORDS[a]) {
       return -1;
     } else {
       return 0;
     }
-  }
-
-  return array.slice().sort(wordSort);
+  });
 }
 
 console.log(alphabeticNumberSort(

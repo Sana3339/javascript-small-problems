@@ -1,33 +1,33 @@
-function palindromes(string) {
-
-  return allSubstrings(string).filter(isPalindrome);
-}
-
-
-function isPalindrome(word) {
-
-  return word.length > 1 && word === word.split('').reverse().join('');
-}
-
 function leadingSubstrings(string) {
 
   let res = [];
 
-  for (let ydx = 1; ydx <= string.length + 1; ydx += 1) {
-    res.push(string.slice(0, ydx));
-
+  for (let idx = 1; idx <= string.length; idx += 1) {
+    res.push(string.slice(0, idx));
   }
   return res;
 }
 
-function allSubstrings(string) {
+function substrings(string) {
 
-  let substrings = [];
+  let res = [];
+
   for (let idx = 0; idx < string.length; idx += 1) {
-    let substring = string.substring(idx);
-    substrings = substrings.concat(leadingSubstrings(substring));
+    let substring = string.slice(idx);
+    res = res.concat(leadingSubstrings(substring));
   }
-  return substrings;
+  return res;
+}
+
+function isPalindrome(substring) {
+
+  return substring.length > 1 && substring === substring.split('').reverse().join('');
+}
+
+function palindromes(sentence) {
+
+  return substrings(sentence).filter(isPalindrome);
+
 }
 
 console.log(palindromes('abcd'));       // []
